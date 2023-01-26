@@ -48,6 +48,7 @@ export default function TodoSearch({search, setSearch}) {
          onChange={onSearchValueChange}
          value={search}
          />
+         
     </InputContainer>
   )
 }

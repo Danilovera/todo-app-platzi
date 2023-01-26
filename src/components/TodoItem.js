@@ -1,6 +1,8 @@
+import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-import './App.css';
+import '../styles/index.css';
 
 const LiStyled = styled.li`
   display: flex;
@@ -16,10 +18,11 @@ export default function TodoItem(props) {
     <LiStyled>
       <div>
         {
-          props.completed?
-          <span className="verde">√</span>
+          props.completed
+          ?
+          <span className="verde"><FontAwesomeIcon icon={faCircleCheck}  /></span>
           :
-          <span>√</span>
+          <span><FontAwesomeIcon icon={faCircleCheck} onClick={props.estadoTarea} /></span>
         }
       </div>
       <div>
@@ -28,7 +31,7 @@ export default function TodoItem(props) {
         </p>
       </div>
       <div>
-        <span>X</span>
+        <span onClick={props.delete}>X</span>
       </div>
     </LiStyled>
   );
